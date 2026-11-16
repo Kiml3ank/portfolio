@@ -152,7 +152,7 @@
     const slice = () => {
       const a = (photo.naturalWidth || 1) / (photo.naturalHeight || 1);   // image aspect ratio
       const FA = (frame.clientWidth / frame.clientHeight) || 1;            // frame shape (width / height), read from CSS
-      const SH = 0.205, PX = 0.6, PY = 0.2;                                 // strip height, focus point
+      const SH = 0.205, PX = 0.6, PY = 0.08;                                // strip height, focus point (keep the top of the head)
       // "cover" size of the image, in frame units (frame width = 1, frame height = 1 / FA)
       const H = 1 / FA, imgW = a > FA ? H * a : 1, imgH = a > FA ? H : 1 / a;
       const y0 = (H - imgH) * PY;                                           // image top offset inside the frame
