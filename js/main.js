@@ -60,8 +60,11 @@
     $('#m-kind').textContent = kindOf(p);
     $('#m-desc').textContent = p.desc || '';
     const th = $('#m-thumb');
-    th.style.backgroundImage = p.image ? `url('${p.image}')` : '';
-    th.textContent = p.image ? '' : (p.stack || []).join(' · ') || (p.category || '').toUpperCase();
+    th.innerHTML = ''; th.style.backgroundImage = '';
+    th.classList.toggle('full', !!(p.image && p.full));
+    if (p.image && p.full) { const im = el('img'); im.src = p.image; im.alt = p.title; th.appendChild(im); }   // gallery: whole image
+    else if (p.image) th.style.backgroundImage = `url('${p.image}')`;
+    else th.textContent = (p.stack || []).join(' · ') || (p.category || '').toUpperCase();
     const st = $('#m-stack'); st.innerHTML = '';
     (p.stack || []).forEach(t => st.appendChild(el('span', '', t)));
     const l = $('#m-link'); l.hidden = !p.link;
@@ -123,12 +126,17 @@
   $$('.gallery[data-area]').forEach(g => {
     (GALLERY[g.dataset.area] || []).forEach(item => {
       const b = el('button', 'bi tile'); b.type = 'button';
-      b.innerHTML = '<div class="tile-img"></div><p class="tile-title"></p><p class="tile-note"></p>';
-      const img = $('.tile-img', b);
-      if (item.image) img.style.backgroundImage = `url('${item.image}')`; else img.textContent = '[ADD IMAGE]';
+      b.innerHTML = '<div class="tile-img"></div><p class="tile-kind"></p><p class="tile-title"></p><p class="tile-note"></p>';
+      const box = $('.tile-img', b);
+      if (item.image) {               // real image: keep its own shape (masonry), load lazily
+        const im = el('img'); im.src = item.image; im.alt = item.title; im.loading = 'lazy';
+        if (item.w) { im.width = item.w; im.height = item.h; }
+        box.appendChild(im); box.classList.add('has-img');
+      } else box.textContent = '[ADD IMAGE]';
+      $('.tile-kind', b).textContent = (item.category || '').toUpperCase();
       $('.tile-title', b).textContent = item.title;
       $('.tile-note', b).textContent = item.note || '';
-      b.addEventListener('click', () => openModal({ title: item.title, desc: item.note, image: item.image, category: item.category || '' }));
+      b.addEventListener('click', () => openModal({ title: item.title, desc: item.note, image: item.image, category: item.category || '', full: true }));
       g.appendChild(b);
     });
   });

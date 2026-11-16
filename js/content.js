@@ -58,7 +58,7 @@ const PROJECTS = [
     area: 'graphic', title: 'Student Council Social Media Design', category: 'Graphic design', year: '2023–2026',
     summary: 'Graphics and posts for the student council Facebook page.',
     desc: 'Graphics and posts designed for the Quang Binh University student council Facebook page, plus content prepared with the team for students.',
-    stack: ['Photoshop', 'Illustrator', 'Canva'], image: '', link: ''
+    stack: ['Photoshop', 'Illustrator', 'Canva'], image: 'images/graphic/national-day-league-key-visual.jpg', link: 'graphic.html'
   }
 ];
 
@@ -66,13 +66,23 @@ const PROJECTS = [
    Add your image files to the "images" folder and put the path in image: 'images/xxx.jpg'.
    Tiles without an image show "[ADD IMAGE]". Add or remove items freely. */
 const GALLERY = {
+  // Lao Student Council, Quang Binh University — https://www.facebook.com/laostudentinquangbinhuniversity
+  // category: series name · w / h: image size (keeps the masonry layout from jumping while images load)
   graphic: [
-    { title: '[Design title]', note: '[Student Council Facebook post · year]', image: '' },
-    { title: '[Design title]', note: '[Event poster · year]', image: '' },
-    { title: '[Design title]', note: '[Announcement graphic · year]', image: '' },
-    { title: '[Design title]', note: '[Social media banner · year]', image: '' },
-    { title: '[Design title]', note: '[Promotional material · year]', image: '' },
-    { title: '[Design title]', note: '[Where it was used · year]', image: '' }
+    { category: 'National Day Sports League', title: 'Key visual', note: 'Main banner for the Lao National Day Sports League (20 Oct – 3 Nov), held at Luxe Stadium and Quang Binh University.', image: 'images/graphic/national-day-league-key-visual.jpg', w: 1024, h: 576 },
+    { category: 'National Day Sports League', title: 'Match schedule', note: 'Fixture graphic for the league: team match-ups with the referee team for each game.', image: 'images/graphic/national-day-league-schedule.jpg', w: 1600, h: 900 },
+    { category: 'National Day Sports League', title: 'Full-time score', note: 'Result post: K63 + K64 vs YT A, 0–2.', image: 'images/graphic/national-day-league-full-time.jpg', w: 768, h: 1024 },
+    { category: 'National Day Sports League', title: 'Match-up · 8 Nov 2025', note: 'Sport event match-up post for the men’s and women’s football games on 8 November 2025.', image: 'images/graphic/sport-event-match-up.jpg', w: 1600, h: 800 },
+    { category: 'National Day Sports League', title: 'Match score · 8 Nov 2025', note: 'Score post with goal scorers: K67 8–5 YT, combined with a photo from the match.', image: 'images/graphic/sport-event-match-score.jpg', w: 1600, h: 800 },
+    { category: 'National Day Sports League', title: 'Volleyball final', note: 'Final match announcement: K67 vs YT, at the Quang Binh University sports hall.', image: 'images/graphic/volleyball-final.jpg', w: 1080, h: 1350 },
+    { category: 'Pi Mai Lao', title: 'Pi Mai Lao Football League', note: 'Tournament poster for the Lao New Year football league, with traditional Lao motifs.', image: 'images/graphic/pimailao-football-league.jpg', w: 896, h: 1088 },
+    { category: 'Lao New Year 2025', title: 'Happy Lao New Year 2025', note: 'Main greeting banner for Lao New Year 2025, mixing Quang Binh and Vientiane landmarks with student portraits.', image: 'images/graphic/lao-new-year-2025-banner.jpg', w: 1600, h: 1005 },
+    { category: 'Lao New Year 2025', title: 'New Year portrait frame I', note: 'Portrait frame from the Lao New Year greeting series.', image: 'images/graphic/lao-new-year-portrait-1.jpg', w: 1200, h: 1600 },
+    { category: 'Lao New Year 2025', title: 'New Year portrait frame II', note: 'Portrait frame from the Lao New Year greeting series.', image: 'images/graphic/lao-new-year-portrait-2.jpg', w: 1200, h: 1600 },
+    { category: 'Lao New Year 2025', title: 'New Year portrait frame III', note: 'Portrait frame from the Lao New Year greeting series.', image: 'images/graphic/lao-new-year-portrait-3.jpg', w: 1200, h: 1600 },
+    { category: 'Lao New Year 2025', title: 'New Year portrait frame IV', note: 'Portrait frame from the Lao New Year greeting series.', image: 'images/graphic/lao-new-year-portrait-4.jpg', w: 1200, h: 1600 },
+    { category: 'Events', title: 'Welcome K18', note: 'Welcome event banner for the new K18 students of the Vietnamese language group.', image: 'images/graphic/welcome-k18.jpg', w: 1600, h: 800 },
+    { category: 'Events', title: 'Lao Women’s Union · 70 years', note: 'Post for the 70th anniversary of the founding of the Lao Women’s Union (20 July).', image: 'images/graphic/lao-womens-union-70-years.jpg', w: 1200, h: 1200 }
   ],
   photography: [
     { title: '[Photo title]', note: '[University event · year]', image: '' },
