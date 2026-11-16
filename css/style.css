@@ -68,7 +68,7 @@ main{max-width:1200px;margin:0 auto;padding:0 24px 72px;display:flex;flex-direct
 .sketch>i:nth-of-type(1){left:-5px;top:-5px}.sketch>i:nth-of-type(2){right:-5px;top:-5px}
 .sketch>i:nth-of-type(3){left:-5px;bottom:-5px}.sketch>i:nth-of-type(4){right:-5px;bottom:-5px}
 .col-intro{position:relative;flex:1 1 300px;min-width:0;max-width:400px}
-.col-photo{position:relative;flex:0 1 360px;min-width:260px;margin:0 auto}
+.col-photo{position:relative;flex:0 1 300px;min-width:230px;margin:0 auto}
 .col-side{position:relative;flex:1 1 230px;min-width:0;max-width:290px}
 .intro{display:flex;flex-direction:column;gap:16px;transition:opacity .7s ease,transform .8s var(--ease)}
 .hello{margin:0;font-family:var(--serif);font-style:italic;font-size:38px;line-height:1}
@@ -82,8 +82,8 @@ h1{margin:0;align-self:flex-start;font-family:var(--display);font-weight:400;fon
 .btn-solid{background:var(--text);color:var(--bg);font-weight:700}.btn-solid:hover{color:var(--bg);background:#fff}
 .btn-line{color:var(--text);border:1px solid var(--line-3)}.btn-line:hover{border-color:var(--text)}
 .photo{position:relative;background:var(--accent);padding:12px;transition:opacity .4s ease,transform .7s cubic-bezier(.34,1.4,.64,1)}
-.photo-frame{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-3)} /* 4:3 landscape: shows the full width, trims a little top and bottom */
-.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%}
+.photo-frame{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--bg-3)} /* 3:4 portrait: full photo height, sides trimmed around the face */
+.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 20%}
 .strip{position:absolute;left:0;right:0;height:20.5%;background:#1a1a1f;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 10px,transparent 10px 20px);transition:transform .6s var(--ease),opacity .4s ease}
 .photo-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);transition:opacity .4s ease .6s}
 .photo-cap{margin:10px 0 0;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#fff}
