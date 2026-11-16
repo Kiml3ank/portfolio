@@ -15,9 +15,9 @@ const PROJECTS = [
   {
     area: 'dev', title: 'Multi-branch Restaurant POS', category: 'Web app', year: '2026',
     summary: 'Four connected screens: QR ordering, staff POS, kitchen display and admin.',
-    desc: 'A web POS for restaurant and drink chains with several branches. Four screens share one dataset and update in real time (SSE): customers order from a QR code at the table, staff run tables, takeaway, payments, receipts and shifts on the POS, the kitchen display tracks tickets by station, and the admin back office manages menu, staff, promotions, reports with CSV export, an audit log and cross-branch comparison. I designed the database and the backend logic. Bilingual UI (Vietnamese / English).',
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Docker'],
-    image: '', link: 'https://github.com/Kiml3ank/POS-Restaurant'
+    desc: 'A web POS for restaurant and drink chains with several branches. Four screens share one dataset and update in real time (SSE): customers order from a QR code at the table, staff run tables, takeaway, payments, receipts and shifts on the POS, the kitchen display tracks tickets by station, and the admin back office manages menu, staff, promotions, reports with CSV export, an audit log and cross-branch comparison. I designed the database and the backend logic. Newer work adds a demo payment flow, a bill-status QR for guests, self device setup, a serve screen, a tablet POS layout and installing as an app (PWA). Bilingual UI (Vietnamese / English).',
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Docker', 'PWA'],
+    image: 'images/dev/restaurant-pos.jpg', link: 'https://github.com/Kiml3ank/POS-Restaurant'
   },
   {
     area: 'dev', title: 'DuayChai Station POS', category: 'Web app', year: '2026',
@@ -28,6 +28,14 @@ const PROJECTS = [
     logo: 'images/dev/duaychai-logo.png',   // home-page card shows the shop logo
     demo: 'https://kiml3ank.github.io/DuayChai-Station-POS/',
     link: 'https://github.com/Kiml3ank/DuayChai-Station-POS'
+  },
+  {
+    area: 'dev', title: 'LaoRum ERP', category: 'ERP system', year: '2026',
+    summary: 'Restaurant ERP in Lao & English: POS, recipe costing, inventory and purchasing, offline on one PC.',
+    desc: 'A single-restaurant ERP in Lao and English that runs on one PC with no internet; staff use it from any browser on the shop Wi-Fi. It covers POS (cash, card, QR), menu and recipes with recipe cost and food-cost %, inventory where stock falls by the recipe when an order is paid, waste, staff meals and stock counts with reasons, and purchasing with approval and goods receiving. Stock is always the sum of recorded movements, never typed over. CSV exports for Excel, daily backups, and acceptance tests for every business rule (T1–T8).',
+    stack: ['Node.js', 'SQLite', 'JavaScript', 'HTML / CSS', 'Lao / English i18n', 'Automated tests'],
+    image: 'images/dev/laorum-erp-pos.jpg',
+    link: 'https://github.com/Kiml3ank/LaoRum-ERP'
   },
   {
     area: 'dev', title: 'Livora — Dormitory Management System', category: 'Web app', year: '',
