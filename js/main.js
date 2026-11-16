@@ -134,7 +134,26 @@
   });
 
   // Photo: hide placeholder if an <img> is added
-  const frame = $('.photo-frame'); if (frame && $('img', frame)) frame.classList.add('has-img');
+  // Portrait: turn the 5 strips into slices of the photo, so the intro assembles the picture
+  const frame = $('.photo-frame'), photo = frame && $('img', frame);
+  if (photo) {
+    const slice = () => {
+      const a = (photo.naturalWidth || 1) / (photo.naturalHeight || 1);   // image aspect ratio
+      const FA = 0.8, SH = 0.205, PX = 0.6, PY = 0.2;                    // frame 4:5, strip height, focus point
+      // "cover" size of the image, in frame units (frame width = 1, frame height = 1 / FA)
+      const H = 1 / FA, imgW = a > FA ? H * a : 1, imgH = a > FA ? H : 1 / a;
+      const y0 = (H - imgH) * PY;                                           // image top offset inside the frame
+      $$('.strip', frame).forEach((st, i) => {
+        const top = H * (i * 0.2), sh = H * SH;
+        st.style.backgroundImage = `url('${photo.currentSrc || photo.src}')`;
+        st.style.backgroundSize = `${(imgW * 100).toFixed(2)}% ${(imgH / sh * 100).toFixed(2)}%`;
+        const py = Math.abs(sh - imgH) < 1e-6 ? 0 : (y0 - top) / (sh - imgH) * 100;
+        st.style.backgroundPosition = `${PX * 100}% ${py.toFixed(2)}%`;
+      });
+      frame.classList.add('has-img');
+    };
+    if (photo.complete && photo.naturalWidth) slice(); else photo.addEventListener('load', slice, { once: true });
+  }
 
   let swarm = null;
   const hero = $('#top');

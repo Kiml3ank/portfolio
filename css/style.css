@@ -83,7 +83,7 @@ h1{margin:0;align-self:flex-start;font-family:var(--display);font-weight:400;fon
 .btn-line{color:var(--text);border:1px solid var(--line-3)}.btn-line:hover{border-color:var(--text)}
 .photo{position:relative;background:var(--accent);padding:12px;transition:opacity .4s ease,transform .7s cubic-bezier(.34,1.4,.64,1)}
 .photo-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg-3)}
-.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 20%}
 .strip{position:absolute;left:0;right:0;height:20.5%;background:#1a1a1f;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 10px,transparent 10px 20px);transition:transform .6s var(--ease),opacity .4s ease}
 .photo-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);transition:opacity .4s ease .6s}
 .photo-cap{margin:10px 0 0;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#fff}
@@ -108,7 +108,10 @@ h1{margin:0;align-self:flex-start;font-family:var(--display);font-weight:400;fon
 .hero:not([data-intro="4"]):not([data-intro="5"]) .strip:nth-child(even){transform:translateX(110%)}
 .hero:not([data-intro="5"]) .side{opacity:0;transform:translateX(24px)}
 .hero:not([data-intro="5"]) .ticker{opacity:0;transform:translateY(16px)}
-.photo-frame.has-img .strip,.photo-frame.has-img .photo-label{display:none}
+/* photo set: the strips are slices of the photo (set by main.js), the <img> stays for screen readers */
+.photo-frame.has-img img{opacity:0}
+.photo-frame.has-img .photo-label{display:none}
+.photo-frame.has-img .strip{background-color:transparent;background-repeat:no-repeat}
 
 .eyebrow{margin:0 0 14px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--accent)}
 .eyebrow i{width:24px;height:1px;background:var(--accent)}
