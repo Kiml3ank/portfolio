@@ -1,0 +1,41 @@
+/* Skill logos (Simple Icons, CC0 — https://simpleicons.org). Generated: monochrome by default,
+   brand colour on hover. Chips use data-icon="key". */
+.chips>span[data-icon]{display:inline-flex;align-items:center;gap:8px}
+.chips>span[data-icon]::before{content:'';flex:none;width:15px;height:15px;background:currentColor;-webkit-mask:var(--icon) center/contain no-repeat;mask:var(--icon) center/contain no-repeat;transition:background-color .25s ease}
+.chips>span[data-icon]{transition:border-color .25s ease,color .25s ease}
+.chips>span[data-icon]:hover{border-color:var(--brand,var(--text))}
+.chips>span[data-icon]:hover::before{background:var(--brand,currentColor)}
+/* fallback icons for skills without a brand logo */
+.chips>span[data-icon="api"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 4 2 12l6 8M16 4l6 8-6 8' fill='none' stroke='black' stroke-width='2.5'/%3E%3C/svg%3E")}
+.chips>span[data-icon="ai"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z'/%3E%3C/svg%3E");--brand:#d97757}
+.chips>span[data-icon="camera"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 3 7.2 5H3v16h18V5h-4.2L15 3zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10z'/%3E%3C/svg%3E")}
+.chips>span[data-icon="chart"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 21V3h2v16h16v2zm4-4V10h3v7zm5 0V6h3v11zm5 0v-5h3v5z'/%3E%3C/svg%3E")}
+.chips>span[data-icon="db"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cellipse cx='12' cy='5' rx='8' ry='3'/%3E%3Cpath d='M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7c0 1.7-3.6 3-8 3S4 8.7 4 7zm0 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5c0 1.7-3.6 3-8 3s-8-1.3-8-3z'/%3E%3C/svg%3E")}
+.chips>span[data-icon="cpp"]{--icon:url("../images/icons/cplusplus.svg");--brand:#00599C}
+.chips>span[data-icon="python"]{--icon:url("../images/icons/python.svg");--brand:#3776AB}
+.chips>span[data-icon="javascript"]{--icon:url("../images/icons/javascript.svg");--brand:#F7DF1E}
+.chips>span[data-icon="typescript"]{--icon:url("../images/icons/typescript.svg");--brand:#3178C6}
+.chips>span[data-icon="html"]{--icon:url("../images/icons/html5.svg");--brand:#E34F26}
+.chips>span[data-icon="tailwind"]{--icon:url("../images/icons/tailwindcss.svg");--brand:#06B6D4}
+.chips>span[data-icon="react"]{--icon:url("../images/icons/react.svg");--brand:#61DAFB}
+.chips>span[data-icon="next"]{--icon:url("../images/icons/nextdotjs.svg");--brand:var(--text)}
+.chips>span[data-icon="node"]{--icon:url("../images/icons/nodedotjs.svg");--brand:#5FA04E}
+.chips>span[data-icon="express"]{--icon:url("../images/icons/express.svg");--brand:var(--text)}
+.chips>span[data-icon="django"]{--icon:url("../images/icons/django.svg");--brand:var(--text)}
+.chips>span[data-icon="fastapi"]{--icon:url("../images/icons/fastapi.svg");--brand:#009688}
+.chips>span[data-icon="postgresql"]{--icon:url("../images/icons/postgresql.svg");--brand:#4169E1}
+.chips>span[data-icon="prisma"]{--icon:url("../images/icons/prisma.svg");--brand:var(--text)}
+.chips>span[data-icon="sqlalchemy"]{--icon:url("../images/icons/sqlalchemy.svg");--brand:#D71F00}
+.chips>span[data-icon="github"]{--icon:url("../images/icons/github.svg");--brand:var(--text)}
+.chips>span[data-icon="git"]{--icon:url("../images/icons/git.svg");--brand:#F05032}
+.chips>span[data-icon="docker"]{--icon:url("../images/icons/docker.svg");--brand:#2496ED}
+.chips>span[data-icon="jwt"]{--icon:url("../images/icons/jsonwebtokens.svg");--brand:var(--text)}
+.chips>span[data-icon="pytest"]{--icon:url("../images/icons/pytest.svg");--brand:#0A9EDC}
+.chips>span[data-icon="canva"]{--icon:url("../images/icons/canva.svg");--brand:#00C4CC}
+.chips>span[data-icon="claude"]{--icon:url("../images/icons/claude.svg");--brand:#D97757}
+.chips>span[data-icon="anthropic"]{--icon:url("../images/icons/anthropic.svg");--brand:var(--text)}
+/* App-style letter badges for tools whose logos are not in Simple Icons (Adobe, Microsoft) */
+.chips>span[data-badge]{display:inline-flex;align-items:center;gap:8px;transition:border-color .25s ease}
+.chips>span[data-badge]::before{content:attr(data-badge);flex:none;min-width:17px;height:17px;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;font:700 9px/1 var(--mono);letter-spacing:0;border:1.5px solid currentColor;border-radius:4px;padding:0 2px;transition:color .25s ease,border-color .25s ease}
+.chips>span[data-badge]:hover{border-color:var(--brand)}
+.chips>span[data-badge]:hover::before{color:var(--brand);border-color:var(--brand)}
