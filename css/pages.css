@@ -71,3 +71,6 @@
 /* Dev page: project screenshot + live demo button */
 .case-shot{display:block;width:100%;max-width:760px;height:auto;margin:16px 0 0;border:1px solid var(--line-2);border-radius:4px}
 .case-side{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+
+/* Home project card: logo shown whole on its own background */
+.thumb.thumb-logo{background-size:62% auto;background-repeat:no-repeat;background-position:center}

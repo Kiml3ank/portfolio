@@ -9,7 +9,8 @@ const ACCENTS = ['#d42f24', '#2f6fd4', '#1f9a5b', '#8a3fd1'];
               (every project also appears in "Projects" on the home page)
    - summary: one line on the home-page card   - desc: full text
    - stack:   tools / technologies             - image: e.g. 'images/pos.jpg'
-   - link:    GitHub URL ('' = no button)   - demo: live demo URL (optional) */
+   - link:    GitHub URL ('' = no button)   - demo: live demo URL (optional)
+   - logo:    optional logo for the home-page card (shown whole); logoBg = its background colour */
 const PROJECTS = [
   {
     area: 'dev', title: 'Multi-branch Restaurant POS', category: 'Web app', year: '2026',
@@ -24,6 +25,7 @@ const PROJECTS = [
     desc: 'A staff ordering app for DuayChai Station, a coffee shop in Laos, for tablet and phone. Staff sign in with a PIN, browse drinks by category or search, customise each drink (temperature, size, sweetness, milk, extra shots, notes) with the price updating live, and build a dine-in or takeaway order. Checkout takes cash (quick amounts, keypad, live change), card or LaoQR. Lao interface, kip with 10% VAT included, installable as a PWA. Live demo: pick a name and enter PIN 1234.',
     stack: ['JavaScript', 'HTML / CSS', 'PWA', 'Responsive UI', 'Lao localisation'],
     image: 'images/dev/duaychai-pos.jpg',
+    logo: 'images/dev/duaychai-logo.png',   // home-page card shows the shop logo
     demo: 'https://kiml3ank.github.io/DuayChai-Station-POS/',
     link: 'https://github.com/Kiml3ank/DuayChai-Station-POS'
   },

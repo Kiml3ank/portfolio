@@ -81,9 +81,11 @@
   if (grid) {
     PROJECTS.forEach((p, i) => {
       const b = el('button', 'bi card'); b.type = 'button'; b.dataset.cat = p.category;
-      const thumb = p.image ? `<div class="thumb" style="background-image:url('${p.image}')"></div>` : '<div class="thumb thumb-stack"></div>';
+      // card picture: a logo (shown whole, on its own background) > a screenshot > the tech stack as text
+      const thumb = p.logo ? `<div class="thumb thumb-logo" style="background-image:url('${p.logo}');background-color:${p.logoBg || '#f1f0ec'}"></div>`
+        : p.image ? `<div class="thumb" style="background-image:url('${p.image}')"></div>` : '<div class="thumb thumb-stack"></div>';
       b.innerHTML = `${thumb}<div class="card-row"><b></b><span>(${String(i + 1).padStart(2, '0')})</span></div><span class="kind"></span><p class="card-desc"></p>`;
-      if (!p.image) $('.thumb', b).textContent = (p.stack || []).slice(0, 4).join(' · ') || p.category.toUpperCase();
+      if (!p.image && !p.logo) $('.thumb', b).textContent = (p.stack || []).slice(0, 4).join(' · ') || p.category.toUpperCase();
       $('.card-row b', b).textContent = p.title;
       $('.kind', b).textContent = kindOf(p);
       $('.card-desc', b).textContent = p.summary || '';
