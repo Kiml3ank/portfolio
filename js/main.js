@@ -82,7 +82,7 @@
     PROJECTS.forEach((p, i) => {
       const b = el('button', 'bi card'); b.type = 'button'; b.dataset.cat = p.category;
       // card picture: a logo (shown whole, on its own background) > a screenshot > the tech stack as text
-      const thumb = p.logo ? `<div class="thumb thumb-logo" style="background-image:url('${p.logo}');background-color:${p.logoBg || '#f1f0ec'}"></div>`
+      const thumb = p.logo ? `<div class="thumb thumb-logo${p.logoPixel ? ' pixel' : ''}" style="background-image:url('${p.logo}');background-color:${p.logoBg || '#f1f0ec'}${p.logoSize ? ';background-size:' + p.logoSize : ''}"></div>`
         : p.image ? `<div class="thumb" style="background-image:url('${p.image}')"></div>` : '<div class="thumb thumb-stack"></div>';
       b.innerHTML = `${thumb}<div class="card-row"><b></b><span>(${String(i + 1).padStart(2, '0')})</span></div><span class="kind"></span><p class="card-desc"></p>`;
       if (!p.image && !p.logo) $('.thumb', b).textContent = (p.stack || []).slice(0, 4).join(' · ') || p.category.toUpperCase();
@@ -119,6 +119,10 @@
       if (p.image) {                    // screenshot under the text
         const shot = el('img', 'case-shot'); shot.src = p.image; shot.alt = p.title + ' screenshot'; shot.loading = 'lazy';
         $('.case-main', a).appendChild(shot);
+      } else if (p.logo) {              // no screenshot: show the project's logo as a badge
+        const badge = el('img', 'case-logo' + (p.logoPixel ? ' pixel' : '')); badge.src = p.logo; badge.alt = ''; badge.loading = 'lazy';
+        badge.style.background = p.logoBg || '#f1f0ec';
+        $('.case-side', a).appendChild(badge);
       }
       const side = $('.case-side', a);
       const btn = (cls, text, href) => { const l = el('a', cls, text); l.href = href; l.target = '_blank'; l.rel = 'noopener'; side.appendChild(l); };

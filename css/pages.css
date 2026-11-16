@@ -74,3 +74,8 @@
 
 /* Home project card: logo shown whole on its own background */
 .thumb.thumb-logo{background-size:62% auto;background-repeat:no-repeat;background-position:center}
+
+/* Pixel-art logos stay sharp; logo badge on developer rows without a screenshot */
+.pixel{image-rendering:pixelated;image-rendering:crisp-edges}
+.case-logo{display:block;width:112px;height:112px;object-fit:contain;padding:10px;border-radius:14px;align-self:flex-end;margin-top:6px}
+@media (max-width:720px){.case-logo{align-self:flex-start;width:88px;height:88px}}

@@ -10,7 +10,8 @@ const ACCENTS = ['#d42f24', '#2f6fd4', '#1f9a5b', '#8a3fd1'];
    - summary: one line on the home-page card   - desc: full text
    - stack:   tools / technologies             - image: e.g. 'images/pos.jpg'
    - link:    GitHub URL ('' = no button)   - demo: live demo URL (optional)
-   - logo:    optional logo for the home-page card (shown whole); logoBg = its background colour */
+   - logo:    optional logo for the home-page card (shown whole); logoBg = its background colour,
+              logoSize = CSS background-size, logoPixel = true for pixel art (keeps it sharp) */
 const PROJECTS = [
   {
     area: 'dev', title: 'Multi-branch Restaurant POS', category: 'Web app', year: '2026',
@@ -47,8 +48,9 @@ const PROJECTS = [
   {
     area: 'dev', title: 'Daily Car-Sales Report Automation', category: 'Automation', year: '2026',
     summary: 'Turns raw ERP exports into the daily sales workbook, with a QC report.',
-    desc: 'Python automation built for daily brand reporting. One script exports the day\'s sale, order and stock reports from the ERP (query and export only, with a safety stop). A second script recognises each file, cleans and maps the rows to the right sheet by maker, applies them to a copy of the main workbook and writes a QC report with a checklist of missing or unexpected data. The original workbook is never changed.',
+    desc: 'Python automation built for daily brand reporting. One script exports the day\'s sale, order and stock reports from the ERP (query and export only, with a safety stop). A second script recognises each file, cleans and maps the rows to the right sheet by maker, applies them to a copy of the main workbook and writes a QC report with a checklist of missing or unexpected data. The original workbook is never changed. Everything runs from Diana, an 8-bit desktop assistant I built: one click to download, build and check the day’s report.',
     stack: ['Python', 'openpyxl', 'xlrd', 'Excel', 'Windows automation'],
+    logo: 'images/dev/diana.png', logoBg: '#fbe3ec', logoSize: 'auto 78%', logoPixel: true,   // Diana, the report bot
     // Link hidden on purpose: this repo's history contains company Excel data. Add
     // 'https://github.com/Kiml3ank/Auto-report-sale' back only after that data is removed.
     image: '', link: ''
