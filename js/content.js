@@ -9,7 +9,7 @@ const ACCENTS = ['#d42f24', '#2f6fd4', '#1f9a5b', '#8a3fd1'];
               (every project also appears in "Projects" on the home page)
    - summary: one line on the home-page card   - desc: full text
    - stack:   tools / technologies             - image: e.g. 'images/pos.jpg'
-   - link:    GitHub / live URL ('' = no button) */
+   - link:    GitHub URL ('' = no button)   - demo: live demo URL (optional) */
 const PROJECTS = [
   {
     area: 'dev', title: 'Multi-branch Restaurant POS', category: 'Web app', year: '2026',
@@ -17,6 +17,15 @@ const PROJECTS = [
     desc: 'A web POS for restaurant and drink chains with several branches. Four screens share one dataset and update in real time (SSE): customers order from a QR code at the table, staff run tables, takeaway, payments, receipts and shifts on the POS, the kitchen display tracks tickets by station, and the admin back office manages menu, staff, promotions, reports with CSV export, an audit log and cross-branch comparison. I designed the database and the backend logic. Bilingual UI (Vietnamese / English).',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Docker'],
     image: '', link: 'https://github.com/Kiml3ank/POS-Restaurant'
+  },
+  {
+    area: 'dev', title: 'DuayChai Station POS', category: 'Web app', year: '2026',
+    summary: 'Tablet & phone ordering app for a Lao coffee shop: try the live demo (PIN 1234).',
+    desc: 'A staff ordering app for DuayChai Station, a coffee shop in Laos, for tablet and phone. Staff sign in with a PIN, browse drinks by category or search, customise each drink (temperature, size, sweetness, milk, extra shots, notes) with the price updating live, and build a dine-in or takeaway order. Checkout takes cash (quick amounts, keypad, live change), card or LaoQR. Lao interface, kip with 10% VAT included, installable as a PWA. Live demo: pick a name and enter PIN 1234.',
+    stack: ['JavaScript', 'HTML / CSS', 'PWA', 'Responsive UI', 'Lao localisation'],
+    image: 'images/dev/duaychai-pos.jpg',
+    demo: 'https://kiml3ank.github.io/DuayChai-Station-POS/',
+    link: 'https://github.com/Kiml3ank/DuayChai-Station-POS'
   },
   {
     area: 'dev', title: 'Livora — Dormitory Management System', category: 'Web app', year: '',

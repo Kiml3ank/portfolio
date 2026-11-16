@@ -67,8 +67,8 @@
     else th.textContent = (p.stack || []).join(' · ') || (p.category || '').toUpperCase();
     const st = $('#m-stack'); st.innerHTML = '';
     (p.stack || []).forEach(t => st.appendChild(el('span', '', t)));
-    const l = $('#m-link'); l.hidden = !p.link;
-    if (p.link) { l.href = p.link; l.textContent = p.link.includes('github.com') ? 'VIEW ON GITHUB ↗' : 'VIEW PROJECT ↗'; }
+    const l = $('#m-link'), href = p.demo || p.link; l.hidden = !href;
+    if (href) { l.href = href; l.textContent = p.demo ? 'LIVE DEMO ↗' : href.includes('github.com') ? 'VIEW ON GITHUB ↗' : 'VIEW PROJECT ↗'; }
     if (modal.showModal) modal.showModal(); else modal.setAttribute('open', '');
   }
   if (modal) {
@@ -114,11 +114,15 @@
       $('h3', a).textContent = p.title;
       $('.case-desc', a).textContent = p.desc;
       (p.stack || []).forEach(t => $('.chips', a).appendChild(el('span', '', t)));
+      if (p.image) {                    // screenshot under the text
+        const shot = el('img', 'case-shot'); shot.src = p.image; shot.alt = p.title + ' screenshot'; shot.loading = 'lazy';
+        $('.case-main', a).appendChild(shot);
+      }
       const side = $('.case-side', a);
-      if (p.link) {
-        const l = el('a', 'btn btn-line', p.link.includes('github.com') ? 'VIEW ON GITHUB ↗' : 'VIEW PROJECT ↗');
-        l.href = p.link; l.target = '_blank'; l.rel = 'noopener'; side.appendChild(l);
-      } else side.appendChild(el('span', 'case-private', 'CODE PRIVATE'));
+      const btn = (cls, text, href) => { const l = el('a', cls, text); l.href = href; l.target = '_blank'; l.rel = 'noopener'; side.appendChild(l); };
+      if (p.demo) btn('btn btn-solid', 'LIVE DEMO ↗', p.demo);
+      if (p.link) btn('btn btn-line', p.link.includes('github.com') ? 'VIEW ON GITHUB ↗' : 'VIEW PROJECT ↗', p.link);
+      if (!p.demo && !p.link) side.appendChild(el('span', 'case-private', 'CODE PRIVATE'));
       caseList.appendChild(a);
     });
   }

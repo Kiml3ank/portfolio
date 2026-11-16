@@ -67,3 +67,7 @@
 /* Pop-up: show the whole design, not a crop */
 .modal-thumb.full{aspect-ratio:auto;display:flex;justify-content:center;align-items:center;background:#08080a;padding:0}
 .modal-thumb.full img{display:block;max-width:100%;max-height:72vh;width:auto;height:auto}
+
+/* Dev page: project screenshot + live demo button */
+.case-shot{display:block;width:100%;max-width:760px;height:auto;margin:16px 0 0;border:1px solid var(--line-2);border-radius:4px}
+.case-side{display:flex;flex-direction:column;align-items:stretch;gap:10px}
